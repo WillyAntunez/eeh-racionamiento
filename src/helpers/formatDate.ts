@@ -1,4 +1,4 @@
-export const  formatDate = (date) => {
+export const  formatDate = (date:Date) => {
     const meses = [
       "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
       "agosto", "septiembre", "octubre", "noviembre", "diciembre"

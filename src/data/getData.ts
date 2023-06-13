@@ -23,7 +23,7 @@ export const getZones = () => {
     return Array.from(zones);
 }
 
-export const getPowerOutages = (zone = null, client = null) => {
+export const getPowerOutages = (zone:string|null = null, client:string|null  = null) => {
     const powerOutages = junio6.filter(powerOutage => {
         if(zone && powerOutage.zona !== zone){
             return false;

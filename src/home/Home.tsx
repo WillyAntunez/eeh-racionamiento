@@ -24,13 +24,13 @@ import { formatDate } from "../helpers/formatDate";
 import noEnergy from "../assets/no-energy.jpg";
 
 export const Home = () => {
-  const [clients, setClients] = useState([]);
-  const [zones, setZones] = useState([]);
+  const [clients, setClients] = useState<any[]>([]);
+  const [zones, setZones] = useState<any[]>([]);
 
-  const [selectedZone, setSelectedZone] = useState("");
+  const [selectedZone, setSelectedZone] = useState<string>("");
   const [selectedClient, setselectedClient] = useState(null);
 
-  const [powerOutages, setPowerOutages] = useState([]);
+  const [powerOutages, setPowerOutages] = useState<any[]>([]);
 
   const [minMaxDates, setMinMaxDates] = useState({
     max: new Date(),
@@ -56,9 +56,9 @@ export const Home = () => {
     if (selectedClient && selectedZone && selectedZone.length >= 1) {
       const newPowerOutages = getPowerOutages(selectedZone, selectedClient);
 
-      newPowerOutages.sort(function (a, b) {
-        const fechaA = new Date(a.fecha);
-        const fechaB = new Date(b.fecha);
+      newPowerOutages.sort(function (a:any, b:any) {
+        const fechaA:any = new Date(a.fecha);
+        const fechaB:any = new Date(b.fecha);
         return fechaA - fechaB;
       });
 
@@ -68,12 +68,12 @@ export const Home = () => {
     }
   }, [selectedClient, selectedZone]);
 
-  const onChangeZone = (event) => {
+  const onChangeZone = (event:any) => {
     setselectedClient(null);
     setSelectedZone(event.target.value);
   };
 
-  const onChangeClient = (event, values) => {
+  const onChangeClient = (event:any, values:any) => {
     setselectedClient(values);
   };
 
