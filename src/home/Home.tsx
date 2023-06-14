@@ -117,7 +117,7 @@ export const Home = () => {
               <Typography fontWeight={"bold"} component={"span"}>
                 Actualizado por ultima vez el día:
               </Typography>
-              6 de junio del 2023 con datos públicos de la ENEE.
+              12 de junio del 2023 con datos públicos de la ENEE.
             </Typography>
           </Grid>
 
